@@ -1,0 +1,11 @@
+@article{BATISTA2022,
+title = {Early Scheduling on Steroids: Boosting Parallel State Machine Replication},
+journal = {Journal of Parallel and Distributed Computing},
+year = {2022},
+issn = {0743-7315},
+doi = {https://doi.org/10.1016/j.jpdc.2022.02.001},
+url = {https://www.sciencedirect.com/science/article/pii/S0743731522000375},
+author = {Eliã Batista and Eduardo Alchieri and Fernando Dotti and Fernando Pedone},
+keywords = {State machine replication, synchronization, work-stealing, scheduling},
+abstract = {State machine replication (SMR) is a standard approach to fault tolerance in which replicas execute requests deterministically and often serially. For performance, some techniques allow concurrent execution of requests in SMR while keeping determinism. Such techniques exploit the fact that independent requests can execute concurrently. A promising category of early scheduling solutions trade scheduling freedom for simplicity, allowing to expedite decisions during scheduling. This paper generalizes early scheduling and proposes a general method to schedule requests to threads, restricting scheduling overhead. Moreover, it explores improvements to the original early scheduling mechanism, namely the use of busy-wait synchronization and work-stealing techniques. We integrate early scheduling and its proposed improvements to a popular SMR framework. Performance results of the basic mechanism and its improvements are presented and compared to more classic approaches, where it is shown that early scheduling with our proposed enhancements can outperform the original early scheduling and other systems by a large margin in many scenarios.}
+}
