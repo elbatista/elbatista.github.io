@@ -1,0 +1,17 @@
+@inproceedings{10.1145/3590140.3629122,
+author = {Batista, Eli\~{a} and Coelho, Paulo and Alchieri, Eduardo and Dotti, Fernando and Pedone, Fernando},
+title = {FlexCast: Genuine Overlay-based Atomic Multicast},
+year = {2023},
+isbn = {9798400701771},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3590140.3629122},
+doi = {10.1145/3590140.3629122},
+abstract = {Atomic multicast is a communication abstraction where messages are propagated to groups of processes with reliability and order guarantees. Atomic multicast is at the core of strongly consistent storage and transactional systems. This paper presents FlexCast, the first genuine overlay-based atomic multicast protocol. Genuineness captures the essence of atomic multicast in that only the sender of a message and the message's destinations coordinate to order the message, leading to efficient protocols. Overlay-based protocols restrict how process groups can communicate. Limiting communication leads to simpler protocols and reduces the amount of information each process must keep about the rest of the system. FlexCast implements genuine atomic multicast using a complete DAG overlay. We experimentally evaluate FlexCast in a geographically distributed environment using gTPC-C, a variation of the TPC-C benchmark that takes into account geographical distribution and locality. We show that, by exploiting genuineness and workload locality, FlexCast outperforms well-established atomic multicast protocols without the inherent communication overhead of state-of-the-art non-genuine multicast protocols.},
+booktitle = {Proceedings of the 24th International Middleware Conference},
+pages = {288–300},
+numpages = {13},
+keywords = {Atomic multicast, Consensus, Fault tolerance},
+location = {Bologna, Italy},
+series = {Middleware '23}
+}
