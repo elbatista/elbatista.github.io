@@ -20,6 +20,7 @@
 \usepackage{tabularx}
 \input{glyphtounicode}
 \usepackage{changepage}
+\usepackage{ragged2e} % add this in the preamble
 
 
 %----------FONT OPTIONS----------
@@ -64,7 +65,7 @@
 %-------------------------
 % Custom commands
 \newcommand{\resumeItem}[1]{
-  \item\small{
+  \item\small \justifying{
     {#1 }%\vspace{2pt}
   }
 }
@@ -127,14 +128,15 @@
 \section{Education}
   \resumeSubHeadingListStart
     \resumeSubheading
-      {University of Lugano (USI)}{Lugano, Switzerland}
-      {PhD in Informatics}{2021 -- Present}
-    \resumeSubheading
-      {PUC-RS}{Porto Alegre, Brazil}
-      {MSc in Computer Science}{2018 -- 2020}
-    \resumeSubheading
-      {PUC-RS}{Porto Alegre, Brazil}
-      {BSc in Computer Science}{2006 -- 2011}
+      {\textsc{Ph.D.} in Informatics}{2021 -- Present}
+      {Università della Svizzera Italiana (USI)}{Lugano, Switzerland}
+      \resumeSubheading
+      {\textsc{M.Sc.} in Computer Science}{2018 -- 2020}
+      {Pontifical Catholic University of Rio Grande do Sul (PUC-RS)}{Porto Alegre, Brazil}
+\resumeSubheading
+      {\textsc{B.Sc.} in Computer Science}{2006 -- 2011}
+      {Pontifical Catholic University of Rio Grande do Sul (PUC-RS)}{Porto Alegre, Brazil}
+
   \resumeSubHeadingListEnd
 
 
@@ -144,7 +146,8 @@
 
   \begin{adjustwidth}{0.15in}{0pt}
   \small
-  Software engineer and researcher with over \textbf{15 years} of experience designing and implementing high-performance software and fault-tolerant systems. Currently a \textbf{\textsc{Ph.D.} candidate} and researcher at University of Lugano (\textsc{USI}), specializing in distributed systems. Proficient in \textbf{Java}, \textbf{Go}, \textbf{Python}, \textbf{C}, and \textbf{Linux environments}, with hands-on experience managing clusters and optimizing large-scale distributed applications. Former \textbf{Senior Software Developer} leading \textbf{full-stack} and mobile projects using \textbf{ReactJS}, \textbf{Node.js}, and \textbf{React Native}. Passionate about building scalable, reliable software that bridges advanced research with real-world applications.
+  \justifying
+  Software engineer and researcher with over \textbf{15 years} of experience designing and implementing high-performance software and fault-tolerant systems. Currently a \textbf{\textsc{Ph.D.} candidate} and researcher at Università della Svizzera Italiana (\textsc{USI}) in Lugano, Switzerland, specializing in distributed systems. Proficient in \textbf{Java}, \textbf{Node.js}, \textbf{Go} and \textbf{Python} for back-end development, and skilled in \textbf{ReactJS}, \textbf{Next.js} , and \textbf{React Native} for front-end and mobile applications. Experienced in \textbf{Linux environments}, \textbf{system optimization}, and \textbf{leading development teams}. Passionate about building robust systems that connect cutting-edge engineering with real-world impact.
 
 
   \end{adjustwidth}
@@ -156,14 +159,10 @@
 
     \resumeSubheading
       {Researcher and Teaching Assistant}{2021 -- Present}
-      {University of Lugano (USI)}{Lugano, Switzerland}
+      {Università della Svizzera Italiana (USI)}{Lugano, Switzerland}
       \resumeItemListStart
-      \resumeItem{Conducted \textbf{research and development} in distributed dependable systems using \textbf{Java}, \textbf{Go}, \textbf{Python}, \textbf{C}, and \textbf{Bash} on \textbf{Linux} environments.}
-      \resumeItem{Administered a \textbf{Linux cluster} supporting experimental distributed systems.}
-      \resumeItem{Developed core SMR components and multicast algorithms focusing on \textbf{performance} and \textbf{fault tolerance}.}
-      \resumeItem{Authored and reviewed papers for top distributed systems conferences.}
-      \resumeItem{\textbf{Teaching assistant} for Operating Systems, Systems Programming, and Distributed Algorithms courses.}
-            \resumeItemListEnd
+      \resumeItem{Conducted \textbf{research and development} in distributed systems using \textbf{Java}, \textbf{Go}, \textbf{Python}, \textbf{C}, and \textbf{Bash} on \textbf{Linux} environments. Administered a \textbf{Linux cluster}, developed core replicated systems components focusing on \textbf{performance} and \textbf{fault tolerance}, and authored research papers for top distributed systems conferences. Also a \textbf{Teaching assistant} for Operating Systems, Systems Programming, and Distributed Algorithms courses.}
+      \resumeItemListEnd
       
     \resumeSubheading
       {Senior Software Developer}{2017 -- 2020}
@@ -171,23 +170,22 @@
       \resumeItemListStart
         % \resumeItem{Full-stack Web Developer | React, Node.js}
         % \resumeItem{Mobile App Developer | React Native, RESTful APIs}
-        \resumeItem{Led the development of scalable full-stack web applications using \textbf{ReactJS} and \textbf{Node.js}, contributing to architecture decisions and continuous integration workflows.}
+        \resumeItem{Led the development and developed scalable full-stack web applications using \textbf{ReactJS} and \textbf{Node.js}, contributing to architecture decisions and continuous integration workflows.}
         \resumeItem{Built and maintained cross-platform mobile applications with \textbf{React Native}, integrating secure and performant \textbf{RESTful APIs} for enterprise clients.}
         \resumeItem{Collaborated with UI/UX designers to implement responsive, user-centric features, improving engagement and usability across platforms.}
-        \resumeItem{Contributed to Agile processes (SCRUM), code reviews, and mentoring of junior developers in modern JavaScript and mobile best practices.}
+        \resumeItem{Contributed to \textbf{Agile} processes (\textbf{SCRUM}), code reviews, and mentoring of junior developers in modern JavaScript and mobile best practices.}
     
      \resumeItemListEnd
 
-     \clearpage
+    %  \clearpage
 
     \resumeSubheading
       {System Analyst}{2014 -- 2017}
       {Bem Promotora}{Brazil, RS}
       \resumeItemListStart
-      \resumeItem{Developed and maintained ERP modules for a credit payroll loan financial company linked to Banrisul, a major bank in Southern Brazil}
-      \resumeItem{Analyzed, documented, and communicated new system features to the development team to improve business process efficiency}
-      \resumeItem{Implemented complex business rules and data processing using \textbf{SQL Server} stored procedures for accurate loan management and reporting}
-      \resumeItem{Interacted closely with stakeholders to analyze requirements, define features, and ensure alignment with financial regulations and business needs}
+      \resumeItem{Developed and maintained \textbf{ERP modules} for a credit payroll loan financial company linked to Banrisul, a major bank in Southern Brazil.}
+      \resumeItem{Analyzed, documented, and communicated new system features to the development team to improve business process efficiency.}
+      \resumeItem{Implemented complex business rules and data processing using \textbf{SQL Server} stored procedures for accurate loan management and reporting.}
         \resumeItemListEnd
      
 
@@ -195,16 +193,16 @@
       {Software Developer}{2010 -- 2013}
       {DBServer}{Brazil, RS}
       \resumeItemListStart
-      \resumeItem{Developed and customized ERP modules using \textbf{Microsoft Visual Basic} tailored for a major fuel retail network (Ipiranga) in Brazil, improving operational efficiency and sales tracking}
-      \resumeItem{Integrated and managed backend logic with \textbf{SQL Server} for efficient data storage and retrieval}
+      \resumeItem{Developed and customized ERP modules using \textbf{Microsoft Visual Basic} tailored for a major fuel retail network (Ipiranga) in Brazil, improving operational efficiency and sales tracking.}
+      \resumeItem{Integrated and managed backend logic with \textbf{SQL Server} for efficient data storage and retrieval.}
      \resumeItemListEnd
 
      \resumeSubheading
      {Software Developer}{2008 -- 2010}
      {Vensis}{Brazil, RS}
      \resumeItemListStart
-     \resumeItem{Built and maintained general-purpose ERP modules with \textbf{Microsoft Visual Basic}, adaptable for various enterprise environments}
-     \resumeItem{Optimized \textbf{SQL Server} queries and stored procedures to boost system performance and data consistency}
+     \resumeItem{Built and maintained general-purpose ERP modules with \textbf{Microsoft Visual Basic}, adaptable for various enterprise environments.}
+     \resumeItem{Optimized \textbf{SQL Server} queries and stored procedures to boost system performance and data consistency.}
      \resumeItemListEnd
 
 
@@ -238,6 +236,7 @@
 \resumeSubHeadingListStart
 
   \resumeSubItem{Michele Cattaneo; Eliã Batista; Fernando Pedone. \textbf{\textit{B+AVL trees: towards data structures for robust and efficient blockchain state synchronization}}. Proceedings of the 44th International Symposium on Reliable Distributed Systems, Porto, Portugal, 2025.}
+
   \resumeSubItem{Eliã Batista; Paulo Coelho; Eduardo Alchieri; Fernando Dotti; Fernando Pedone. \textbf{\textit{FlexCast: Genuine Overlay-based Atomic Multicast}}. Proceedings of the 24th International Middleware Conference, Bologna, Italy, 2023.}
 
   
@@ -253,13 +252,13 @@
 \section{Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-    \textbf{Languages}{: English (fluent), Italian (intermediate), Portuguese (native)} \\ \vspace{2mm}
-     \textbf{Programming Languages}{: Java, JavaScript, HTML/CSS, C/C++, SQL, Go, PHP, Visual Basic} \\ \vspace{2mm}
-     \textbf{Frameworks \& Methodologies}{: ReactJS, Node.js, React Native, Next.js, Agile, SCRUM} \\ \vspace{2mm}
-     \textbf{Developer Tools \& Platforms}{: Git, Maven, Gradle, REST APIs, VS Code, Visual Studio} \\ \vspace{2mm}
-     \textbf{Databases \& Storage}{: SQL Server, PostgreSQL, MongoDB, Firebase Realtime Database} \\ \vspace{2mm}
+    \textbf{Languages}{: English (fluent), Italian (intermediate), Portuguese (native).} \\ \vspace{2mm}
+     \textbf{Programming Languages}{: Java, JavaScript, HTML/CSS, C/C++, SQL, Go, PHP, Visual Basic.} \\ \vspace{2mm}
+     \textbf{Frameworks \& Methodologies}{: ReactJS, Node.js, React Native, Next.js, Agile, SCRUM.} \\ \vspace{2mm}
+     \textbf{Developer Tools \& Platforms}{: Git, Maven, Gradle, REST APIs, VS Code.} \\ \vspace{2mm}
+     \textbf{Databases \& Storage}{: SQL Server, PostgreSQL, MongoDB, Firebase Realtime Database.} \\ \vspace{2mm}
     %  \textbf{Cloud Services}{: Firebase Hosting, Firebase Authentication, Firebase Functions, Basic knowledge of AWS cloud services} \\ \vspace{2mm}
-     \textbf{Distributed Systems}{: State Machine Replication, Blockchains} \\ \vspace{2mm}
+     \textbf{Distributed Systems}{: State Machine Replication, Blockchains.} \\ \vspace{2mm}
     %  \textbf{Personal Hobby Project}{: \href{https://wondersofswitzerland.com/}{\underline{wondersofswitzerland.com}} — a hobby project written in Next.js showcasing family-friendly destinations for tourists across Switzerland}
     }}
  \end{itemize}
