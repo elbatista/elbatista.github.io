@@ -1,0 +1,163 @@
+% Tailored CV for Swissquote - Senior Backend Software Engineer
+
+%-------------------------
+% Resume in Latex (Updated for Swissquote)
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+\usepackage{changepage}
+\usepackage{ragged2e}
+
+% Fonts
+\usepackage[sfdefault]{sourcesanspro}
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Margins
+\addtolength{\oddsidemargin}{-0.2in}
+\addtolength{\evensidemargin}{-0.2in}
+\addtolength{\textwidth}{.3in}
+\addtolength{\topmargin}{-.5in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Section formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\pdfgentounicode=1
+
+% Commands
+\newcommand{\resumeItem}[1]{
+  \item\small \justifying{#1 }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\huge \scshape Eliã Rafael de Lima Batista} \\ \vspace{12pt}
+    \small 77-992-5544 $|$ \href{mailto:o.elia.batista@gmail.com}{\underline{o.elia.batista@gmail.com}} $|$ 
+    \href{https://www.linkedin.com/in/e-batista}{\underline{linkedin.com/in/e-batista}} $|$
+    \href{https://elbatista.github.io}{\underline{elbatista.github.io}} \\ \vspace{5pt}
+    \small 6963 Pregassona, Ticino, Switzerland \\ 
+    \textit{Valid Swiss Work Permit | Available to relocate or commute}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {\textsc{Ph.D.} in Informatics}{2021 -- Feb 2026 (expected)}
+      {Università della Svizzera Italiana (USI)}{Lugano, Switzerland}
+    \resumeSubheading
+      {\textsc{M.Sc.} in Computer Science}{2018 -- 2020}
+      {Pontifical Catholic University of Rio Grande do Sul (PUC-RS)}{Porto Alegre, Brazil}
+    \resumeSubheading
+      {\textsc{B.Sc.} in Computer Science}{2006 -- 2011}
+      {Pontifical Catholic University of Rio Grande do Sul (PUC-RS)}{Porto Alegre, Brazil}
+  \resumeSubHeadingListEnd
+
+%-----------SUMMARY-----------
+\section{Professional Summary}
+\begin{adjustwidth}{0.15in}{0pt}
+\small
+\justifying
+Backend-focused Software Engineer with 10+ years of experience in \textbf{Java}, distributed systems, backend services, and event-driven architectures. Strong background in \textbf{Spring/Spring Boot}, \textbf{JPA/Hibernate}, REST APIs, and messaging systems. Experience building fault-tolerant systems, developing performance-oriented backend components, and deploying production services. Passionate about financial systems, trading platforms, and scalable backend architectures.
+\end{adjustwidth}
+
+%-----------EXPERIENCE-----------
+\section{Professional Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Research and Development Engineer}{2021 -- Present}
+      {Università della Svizzera Italiana (USI)}{Lugano, Switzerland}
+      \resumeItemListStart
+        \resumeItem{Designed and implemented core components for \textbf{fault-tolerant distributed systems} using \textbf{Java, Go, and Python}.}
+        \resumeItem{Developed high-performance replicated system modules with focus on \textbf{state management, recovery, and message ordering}.}
+        \resumeItem{Worked with event-driven designs and communication overlays relevant to \textbf{atomic multicast} and real-time message processing.}
+        \resumeItem{Administered and optimized a \textbf{Linux cluster}, including deployment, testing, and monitoring workflows.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Senior Software Developer}{2017 -- 2020}
+      {Compasso UOL}{Brazil}
+      \resumeItemListStart
+        \resumeItem{Led development of production-grade backend and full-stack applications using \textbf{Java, Node.js, React}, and RESTful APIs.}
+        \resumeItem{Integrated complex business logic and contributed to scalable, modular backend architectures.}
+        \resumeItem{Participated in \textbf{code reviews, CI/CD}, and team mentoring.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {System Analyst}{2014 -- 2017}
+      {Bem Promotora}{Brazil}
+      \resumeItemListStart
+        \resumeItem{Developed \textbf{financial and loan-processing} ERP modules using SQL Server and enterprise backend patterns.}
+        \resumeItem{Implemented data workflows and business rules ensuring accurate settlement and reporting processes.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Software Developer}{2010 -- 2013}
+      {DBServer}{Brazil}
+      \resumeItemListStart
+        \resumeItem{Developed backend modules and ERP features for major retail clients using Microsoft technologies.}
+        \resumeItem{Designed efficient database procedures and optimized SQL queries for high-volume operations.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Software Developer}{2008 -- 2010}
+      {Vensis}{Brazil}
+      \resumeItemListStart
+        \resumeItem{Built general-purpose ERP modules and backend business logic.}
+        \resumeItem{Optimized SQL Server operations, improving system performance and stability.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------SKILLS-----------
+\section{Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small
+    \item{\textbf{Java Ecosystem}{: Java 8--21, Spring Boot, Hibernate/JPA, Maven, Gradle.} \\ \vspace{2mm}
+    \textbf{Event-Driven \& Messaging}{: Kafka, RabbitMQ (experience with distributed communication patterns).} \\ \vspace{2mm}
+    \textbf{DevOps \& Tools}{: Docker, Jenkins, GitHub, CI/CD pipelines.} \\ \vspace{2mm}
+    \textbf{Databases}{: PostgreSQL, MySQL, SQL Server, MongoDB, FirebaseDB.} \\ \vspace{2mm}
+    \textbf{Cloud}{: AWS (basic), Linux server administration.} \\ \vspace{2mm}
+    \textbf{Languages}{: English (fluent), Italian (intermediate), Portuguese (native).}}
+ \end{itemize}
+
+\end{document}

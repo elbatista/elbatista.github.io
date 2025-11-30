@@ -1,3 +1,18 @@
 
 *.synctex.gz
 .DS_Store
+cover*
+
+*.synctex.gz
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.nav
+*.snm
+*.vrb
+*.lof

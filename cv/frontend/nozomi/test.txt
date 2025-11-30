@@ -1,0 +1,44 @@
+1. 
+Here is an algorihtm in python to find characters that appear at least twice:
+
+def find_duplicates(chars):
+    count = {}
+    for c in chars:
+        count[c] = count.get(c, 0) + 1
+    return [c for c, freq in count.items() if freq >= 2]
+
+#example
+chars = ['c', 'a', 'i', 'o', 'p', 'a', 'o']
+print(find_duplicates(chars)) 
+
+in terms of time complexity it is O(n), as we traverse the input once to count characters, and we traverse once over uniqeu keys to collect duplicates
+in terms of  space complexity is O(k), as we store counts for each unique char in a dictionary (k = number of unique chars)
+
+2.
+to the best of my knowledge, a unit test is a small piece of code (for example, function or class) to run in isolation and test specific parts or functions of our software.
+integration tests will test the interaction between multiple components/modules to ensure they work together, it will most likely be used in distributed systems or microservice architectures where many separate peaces of code/software form our system.
+system tests will test the whole application, from backend to frontend, maybe including external libs and/or APIs to validate overall system behavior
+
+3.
+regarding design patterns, specially for frontend development using, say, ReactJS, I really like using the MVVM pattern.
+it separates application logic (Model), user interface (View), and presentation logic (ViewModel) to improve maintainability and testability
+the View displays UI components, the ViewModel handles state and logic, and the Model represents the data
+if we use something like React/Redux, changes in the ViewModel automatically update the View.
+
+4.
+In a multi-thread application, threads will share memory space, this is good as it brings low overhead for communication, and also good for I/O-heavy tasks.
+However, you will have to deal with race conditions on shared data, it will require careful synchronization, and ist very prone to bugs.
+
+in multi-process, processes run in isolation from each other and can utilize more CPU cores efficiently. however to comunicate they have to resort to some message passing mechanism or to the OS to share specific regions of memeory (which also brings sync issues). You also consume more memory, proceses are heavier than threads, and, again, inter-process communication is more complex/slower.
+
+5.
+for boring I would say repetitive bug fixing or refactoring of legacy code without adding value or new functionalities
+satisfying: designing and delivering high-impact, scalable features that solve real-world problems and make users lifes easier
+
+6.
+Dockerfile explanation:
+it starts and downloads a mini Debian base  image
+then generates a random string of size 32 in /tmp/auth
+then creates a script to delete /tmp/auth if it exists
+then makes it executable and runs it, which will clean the temporary auth file
+then there is a default command to print “done” when the container runs
