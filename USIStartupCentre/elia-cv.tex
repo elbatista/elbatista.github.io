@@ -1,0 +1,182 @@
+%-------------------------
+% Resume in Latex - Tailored for KAIROS project
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+\usepackage{changepage}
+
+%----------FONT OPTIONS----------
+\usepackage[sfdefault]{sourcesanspro}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.2in}
+\addtolength{\evensidemargin}{-0.2in}
+\addtolength{\textwidth}{.3in}
+\addtolength{\topmargin}{-.5in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{\item\small{#1}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\huge \scshape Eliã Rafael de Lima Batista} \\ \vspace{10pt}
+    \small 77-992-5544 $|$ \href{mailto:o.elia.batista@gmail.com}{o.elia.batista@gmail.com} $|$ 
+    \href{https://www.linkedin.com/in/e-batista}{linkedin.com/in/e-batista} $|$
+    \href{https://elbatista.github.io}{elbatista.github.io} \\
+    \vspace{3pt}
+    \small \emph{PhD Candidate in Informatics, Distributed Systems Researcher} \\
+    \small 6963 Pregassona, TI, Switzerland
+\end{center}
+
+\vspace{2pt}
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+    \resumeSubheading
+      {Università della Svizzera italiana (USI)}{Lugano, Switzerland}
+      {PhD in Informatics, Distributed Systems}{2021 -- Feb 2026}
+    \resumeSubheading
+      {PUC-RS}{Brazil}
+      {MSc in Computer Science}{2018 -- 2020}
+    \resumeSubheading
+      {PUC-RS}{Brazil}
+      {BSc in Computer Science}{2006 -- 2011}
+\resumeSubHeadingListEnd
+
+\vspace{2pt}
+
+%-----------PROFESSIONAL SUMMARY-----------
+\section{Professional Summary}
+\begin{adjustwidth}{0.15in}{0pt}
+\small
+Distributed systems researcher and software engineer with \textbf{10+ years} of experience designing scalable, fault-tolerant architectures and high-performance software. Focused on \textbf{incremental computation, real-time performance, and distributed state management}. Experienced in implementing \textbf{distributed middleware, SMR, and consensus protocols}, bridging cutting-edge research with practical enterprise deployments. Skilled in \textbf{Java, Go, Python, C}, and cluster management in Linux environments. Passionate about integrating \textbf{knowledge graphs, AI agents, and LLMs} for real-time, adaptive decision-making systems.
+\end{adjustwidth}
+
+\vspace{2pt}
+
+%-----------EXPERIENCE-----------
+\section{Professional Experience}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{Research and Development}{2021 -- Feb 2026}
+{University of Lugano (USI)}{Lugano, Switzerland}
+\resumeItemListStart
+\resumeItem{Designed and implemented \textbf{distributed fault-tolerant systems} supporting high-throughput, low-latency operations on dynamic datasets.}
+\resumeItem{Developed core \textbf{State Machine Replication (SMR)} and \textbf{Atomic Multicast} components with incremental state management.}
+\resumeItem{Optimized distributed middleware for \textbf{real-time performance and iterative processing}.}
+\resumeItem{Administered a \textbf{Linux cluster} supporting experimental deployments of scalable distributed algorithms.}
+\resumeItem{Authored papers in top conferences and journals on distributed state management, fault tolerance, and parallel SMR.}
+\resumeItem{Teaching assistant for \textbf{Operating Systems, Systems Programming, and Distributed Algorithms}.}
+\resumeItemListEnd
+
+\resumeSubheading
+{Senior Software Developer}{2017 -- 2020}
+{Compasso UOL}{Brazil, RS}
+\resumeItemListStart
+\resumeItem{Led development of \textbf{scalable full-stack applications} and backend services for enterprise clients.}
+\resumeItem{Implemented RESTful APIs for dynamic data access and optimized data pipelines for performance and reliability.}
+\resumeItem{Mentored junior developers on software architecture and distributed application design.}
+\resumeItemListEnd
+
+\resumeSubheading
+{System Analyst}{2014 -- 2017}
+{Bem Promotora}{Brazil, RS}
+\resumeItemListStart
+\resumeItem{Analyzed and optimized ERP modules, implementing \textbf{efficient data processing pipelines} with SQL Server.}
+\resumeItem{Documented and communicated requirements, ensuring alignment with business rules and regulatory constraints.}
+\resumeItemListEnd
+
+
+\resumeSubheading
+{Software Developer}{2010 -- 2013}
+{DBServer}{Brazil, RS}
+\resumeItemListStart
+\resumeItem{Developed and customized ERP modules using \textbf{Microsoft technologies} tailored for a major fuel retail network in Brazil, improving operational efficiency and sales tracking}
+\resumeItem{Integrated and managed backend logic with \textbf{SQL Server} for efficient data storage and retrieval}
+\resumeItemListEnd
+
+\resumeSubheading
+{Software Developer}{2008 -- 2010}
+{Vensis}{Brazil, RS}
+\resumeItemListStart
+\resumeItem{Built and maintained general-purpose ERP modules with \textbf{Microsoft technologies}, adaptable for various enterprise environments}
+\resumeItem{Optimized \textbf{SQL Server} queries and stored procedures to boost system performance and data consistency}
+\resumeItemListEnd
+
+
+
+\resumeSubHeadingListEnd
+
+\vspace{2pt}
+
+%-----------ACADEMIC PUBLICATIONS-----------
+\section{Academic Publications}
+\resumeSubHeadingListStart
+\resumeSubItem{Michele Cattaneo; Eliã Batista; Fernando Pedone. \textbf{\textit{B+AVL trees: towards data structures for robust and efficient blockchain state synchronization}}. Proceedings of the 44th International Symposium on Reliable Distributed Systems, 2025.}
+\resumeSubItem{Eliã Batista; Paulo Coelho; Eduardo Alchieri; Fernando Dotti; Fernando Pedone. \textbf{\textit{FlexCast: Genuine Overlay-based Atomic Multicast}}. Proceedings of the 24th International Middleware Conference, 2023.}
+\resumeSubItem{Eliã Batista; Eduardo Alchieri; Fernando Dotti; Fernando Pedone. \textbf{\textit{Early Scheduling on Steroids: Boosting Parallel State Machine Replication}}. Journal of Parallel and Distributed Computing, 2022.}
+\resumeSubItem{Eliã Batista; Eduardo Alchieri; Fernando Dotti; Fernando Pedone. \textbf{\textit{Resource Utilization Analysis of Early Scheduling in Parallel State Machine Replication}}. Latin-American Symposium on Dependable Computing, 2019.}
+\resumeSubHeadingListEnd
+
+\vspace{2pt}
+
+%-----------SKILLS-----------
+\section{Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+\small
+\item{
+  \textbf{Programming:} Java, Go, Python, C, Visual Basic, JavaScript\\
+  \textbf{Frameworks \& Methodologies:} React, Node.js, Next.js, Agile/SCRUM\\
+  \textbf{Developer Tools:} Git, Maven, Gradle, REST APIs, Linux Cluster Administration\\
+  \textbf{Databases \& Storage:} SQL Server, PostgreSQL, MongoDB, Firebase DB, Graph Databases (Neo4j)\\
+  \textbf{Distributed Systems:} State Machine Replication, Consensus, Paxos, Atomic Multicast, Incremental Computation, Fault-Tolerant Middleware\\
+  \textbf{AI \& Knowledge Systems:} Knowledge Graphs, LLM Integration, Retrieval-Augmented Generation (RAG), Real-Time Reasoning}\\
+  \textbf{Languages:} English (fluent), Italian (intermediate), Portuguese (native)
+\end{itemize}
+
+\end{document}
