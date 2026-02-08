@@ -24,12 +24,13 @@ header img {
   font-size: .9rem;
   
 }
-header a {
+
+header p a {
   color: #00aaff;
   text-decoration: none;
 }
 
-header a:hover {
+header p a:hover {
   text-decoration: underline;
 }
 
@@ -64,8 +65,14 @@ footer {
   border-top: 1px solid #333;
 }
 
-.publication a {
+.publication  a {
   text-decoration: none;
+  color: #171a24;
+  
+}
+
+.publication  a:hover {
+    text-decoration: underline;  
 }
 
 @media (max-width: 600px) {
@@ -92,4 +99,156 @@ footer {
     font-size: 0.6rem;
   }
   
+}
+
+
+
+
+/* =========================
+   BibTeX Modal (site style)
+   ========================= */
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(23, 26, 36, 0.72); /* matches header tone */
+  padding: 24px;
+  z-index: 9999;
+}
+
+.modal.open {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  width: min(920px, 100%);
+  max-height: 85vh;
+  overflow: hidden;
+  background: #ffffff;
+  color: #121212;
+  border-radius: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  background: #171a24;           /* same as header */
+  color: #e0e0e0;                /* same as header text */
+  border-bottom: 1px solid #333; /* consistent separators */
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.modal-close {
+  font-size: 26px;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: transparent;
+  color: #e0e0e0;
+  width: 38px;
+  height: 32px;
+  border-radius: 8px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.modal-close:hover {
+  border-color: rgba(255,255,255,0.35);
+  background: rgba(255,255,255,0.06);
+}
+
+.modal-pre {
+  margin: 0;
+  padding: 16px;
+  overflow: auto;
+  max-height: calc(85vh - 120px);
+  background: #f6f7f9; /* subtle light gray */
+  border: none;
+  white-space: pre;
+  line-height: 1.5;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 13px;
+  color: #121212;
+}
+
+.modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  background: #ffffff;
+}
+
+.modal-link {
+  color: #00aaff; /* same accent as your header links */
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.modal-link:hover {
+  text-decoration: underline;
+}
+
+.modal-btn {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: #00aaff;   /* accent */
+  color: #ffffff;
+  padding: 9px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.modal-btn:hover {
+  filter: brightness(0.95);
+}
+
+.modal-btn:active {
+  transform: translateY(1px);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .modal {
+    padding: 12px;
+  }
+
+  .modal-content {
+    border-radius: 12px;
+  }
+
+  .modal-pre {
+    font-size: 12px;
+    padding: 12px;
+    max-height: calc(85vh - 132px);
+  }
+
+  .modal-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .modal-btn {
+    width: 100%;
+  }
+
+  .modal-link {
+    text-align: center;
+  }
 }
