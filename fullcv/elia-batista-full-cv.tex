@@ -1,0 +1,711 @@
+% =========================
+% Simple Academic CV Template (content-first, no colors)
+% =========================
+\documentclass[10pt,a4paper]{article}
+
+% ---------- Packages ----------
+\usepackage[margin=1.8cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc} % if using pdflatex; remove if using lualatex/xelatex
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{datetime2}
+\usepackage{array}
+
+% ---------- Hyperref ----------
+\hypersetup{
+  colorlinks=false,
+  pdfborder={0 0 0},
+  hidelinks
+}
+
+% ---------- Section formatting ----------
+\titleformat{\section}{\Large\bfseries}{}{0pt}{}[\vspace{2pt}\hrule]
+\titleformat{\subsection}{\bfseries}{}{0pt}{}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+% ---------- List spacing ----------
+\setlist[itemize]{leftmargin=*, topsep=2pt, itemsep=4pt, parsep=0pt}
+\setlist[enumerate]{leftmargin=*, topsep=2pt, itemsep=2pt, parsep=0pt}
+
+% ---------- Helper commands ----------
+\newcommand{\cvsection}[1]{\section*{#1}}
+\newcommand{\cvsubsection}[1]{\subsection*{#1}}
+
+% 3-column entry: Title | Right-aligned date/location | body
+\newcommand{\cventry}[4]{%
+  \begin{tabularx}{\linewidth}{@{}X r@{}}
+    {\bfseries #1} & {#2} \\
+    {\itshape #3} & \\
+  \end{tabularx}
+  \vspace{-2pt}
+  #4
+  \vspace{4pt}
+}
+
+% Publication item (numbered list)
+\newcommand{\pubitem}[2]{\item[\textbf{[#1]}] #2}
+
+
+
+\newcommand{\USI}{Università della Svizzera italiana}
+\newcommand{\PUCRS}{Pontifícia Universidade Católica do Rio Grande do Sul}
+
+% ---------- Placeholders (fill these) ----------
+% Header / identity
+\newcommand{\CVDate}{\DTMtoday} % or set manually, e.g., January 21, 2021
+\newcommand{\FullName}{\textbf{Dr. Eliã Rafael de Lima Batista}}
+\newcommand{\CurntTitle}{Postdoctoral Researcher at \USI~(USI)}
+\newcommand{\Email}{o.elia.batista@gmail.com}
+\newcommand{\Homepage}{https://elbatista.github.io}
+\newcommand{\Nationalities}{Brazilian}
+\newcommand{\Location}{Lugano, Switzerland}
+
+% Optional short “signal/statistics” block
+\newcommand{\StatLineOne}{Research Since YYYY}
+\newcommand{\StatLineTwo}{Publications: X \quad Citations: Y \quad h-index: Z \quad i10-index: W}
+\newcommand{\StatLineThree}{Teaching: N courses \quad M students \quad K hours (optional)}
+\newcommand{\CVStatistics}{%
+
+\begin{tabularx}{\linewidth}{@{}>{\hsize=.99\hsize}X >{\hsize=.99\hsize}X@{}}
+    
+  {\large Research Since 2018} & \\ [6pt]
+  Publications: & {\large \textbf{4}} (journals + conferences) \\ [3pt]
+  Under Submission: & {\large \textbf{3}} \\ [3pt]
+  Citations: & {\large \textbf{11}} (Google Scholar) \\ [3pt]
+  h-index: & {\large \textbf{3}} \\ [3pt]
+  Courses taught (TA): & {\large \textbf{3}} distinct courses \\ [3pt]
+  Supervised students: & {\large \textbf{1}} BSc, {\large \textbf{1}} MSc  \\ [3pt]
+  Project proposals (funding): & {\large \textbf{3}}
+\end{tabularx}
+}
+
+% Summary / highlights
+\newcommand{\SummaryText}{%
+I received the PhD degree in Informatics
+at the \USI~(USI), Lugano, Switzerland,
+in a cotutelle de thèse program
+with the \PUCRS~(PUC-RS), Brazil.
+I hold a MSc and a BSc in Computer Science from PUC-RS.
+Prior to academia, I worked as a senior software developer and system analyst in Brazil.
+
+I am currently a Postdoctoral researcher at USI and my research focuses on dependable distributed systems, with particular emphasis on
+State Machine Replication (SMR), parallel scheduling, state management and recovery,
+and atomic multicast protocols.
+My current work explores optimized data structures and algorithms for efficient SMR
+state transference, as well as communication overlays that address fault tolerance,
+system reconfiguration, and performance under varying workload and locality conditions.
+
+In addition to research activities, I have been involved in teaching and academic
+service, including participation in undergraduate and graduate courses, student
+supervision, and peer review activities.
+My work has resulted in publications in peer-reviewed international journals and
+conferences in the area of distributed systems.
+}
+
+\newcommand{\Highlights}{%
+\begin{itemize}
+  \item Researcher with strong experience in designing and implementing
+        efficient and dependable distributed systems, combining theory and practice.
+  \item Solid expertise in SMR, atomic multicast, parallel
+        scheduling, and state management and recovery, with a focus on scalable and
+        fault-tolerant protocols.
+  \item Strong systems and full-stack background from prior industry experience as a
+        senior software developer and system analyst.
+  \item Active involvement in academic teaching and student supervision at undergraduate
+        and graduate levels.
+  \item Experience in international and cross-institutional research through a cotutelle
+        PhD program between Switzerland and Brazil.
+  \item Proven ability to work both independently and collaboratively, contributing to
+        research projects, leading technical tasks, and coordinating experimental work.
+  \item Fast learner with strong analytical skills, capable of understanding complex
+        technical material and designing, implementing, and optimizing distributed protocols.
+\end{itemize}
+}
+
+% Online profiles (add/remove rows as needed)
+\newcommand{\OnlineProfiles}{%
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+  LinkedIn: & \href{https://www.linkedin.com/in/e-batista}{\underline{e-batista}} \\ [3pt]
+  Google Scholar: & \href{https://scholar.google.com/citations?user=LP2-pCYAAAAJ}{\underline{LP2-pCYAAAAJ}} \\ [3pt]
+  ResearchGate: & \href{https://www.researchgate.net/profile/Elia-De-Lima-Batista}{\underline{Elia-De-Lima-Batista}} \\ [3pt]
+  ORCID: & \href{https://orcid.org/0000-0001-9374-9288}{\underline{0000-0001-9374-9288}} \\ [3pt]
+  GitHub: & \href{https://github.com/elbatista}{\underline{elbatista}} \\ [3pt]
+\end{tabularx}
+}
+
+% ---------- Document ----------
+\begin{document}
+
+\pagenumbering{gobble} % suppress page numbers
+
+
+% ===== Header =====
+{\Large \FullName}\\  [6pt]
+{\CurntTitle}\\ [3pt]
+\Location\\ [3pt]
+Email: \href{mailto:\Email}{\underline{\Email}}\quad|\quad Homepage: \href{\Homepage}{\underline{www.elbatista.github.io}}\\ [3pt]
+Nationality: \Nationalities \quad | \quad
+Languages: Portuguese (native), English (fluent), Italian (intermediate)
+
+% \vspace{6pt}
+% \hrule
+% \vspace{1pt}
+
+% ===== Summary / Highlights / Profiles / Stats =====
+\cvsection{Summary}
+\SummaryText
+
+\cvsection{Highlights}
+\Highlights
+
+% \cvsection{Online Profiles}
+% \OnlineProfiles
+
+% \cvsection{Statistics (optional)}
+% \StatLineOne\\
+% \StatLineTwo\\
+% \StatLineThree
+
+\cvsection{Online Profiles and Statistics}
+
+\begin{tabularx}{\linewidth}{@{}>{\hsize=0.79\hsize}X >{\hsize=1.1\hsize}X@{}}
+  \OnlineProfiles &
+  \CVStatistics \\
+\end{tabularx}
+
+
+\newpage
+\pagenumbering{arabic} % start numbering
+\setcounter{page}{2}
+
+% =========================
+% Personal Information Group
+% =========================
+\cvsection{Education}
+
+% ---- Academic Degrees ----
+% Repeat \cventry for each degree
+\cventry
+  {PhD in Informatics}
+  {2021--2026 \quad | \quad Lugano, Switzerland}
+  {\USI~(USI) / PUC-RS}
+  {\textbf{Thesis:}
+    \underline{\href{https://elbatista.github.io/thesis.pdf}
+    {Revving Up Replication: Communication and State Management for State Machine Replication}}\\ [4pt] 
+    \textbf{Advisors:}
+    \underline{\href{https://www.inf.usi.ch/faculty/pedone/}
+    {Prof. Dr. Fernando Pedone}} (USI) and
+    \underline{\href{https://fldotti.github.io/}
+    {Prof. Dr. Fernando Dotti}} (PUC-RS)\\
+  }
+
+\cventry
+  {MSc in Computer Science}
+  {2018--2020 \quad | \quad Porto Alegre, Brazil}
+  {PUC-RS}
+  {\textbf{Thesis:}
+    \underline{\href{http://tede2.pucrs.br/tede2/handle/tede/9165}
+    {Enhancing Early Scheduling in Parallel State Machine Replication}}\\  [4pt]
+    \textbf{Advisor:}
+    \underline{\href{https://fldotti.github.io/}
+    {Prof. Dr. Fernando Dotti}} \\
+  }
+
+
+\cventry
+  {BSc in Computer Science}
+  {2006--2011 \quad | \quad Porto Alegre, Brazil}
+  {PUC-RS}
+  {
+    \textbf{Advisor:}
+    \underline{\href{https://fldotti.github.io/}
+    {Prof. Dr. Fernando Dotti}} 
+  }
+\cvsection{Professional Experience}
+
+\cventry
+  {PhD Researcher / Research \& Development Engineer}
+  {2021 -- 2026 \quad | \quad Lugano, Switzerland}
+  {Distributed Systems Group, \USI}
+  {%
+    \begin{itemize}
+  \item Conducting research in dependable distributed systems, with a focus on
+        State Machine Replication, Atomic Multicast, system performance, and fault tolerance.
+  \item Designing and evaluating distributed protocols and system architectures,
+        including communication patterns, state management mechanisms, and recovery strategies.
+  \item Developing experimental infrastructures and prototypes to support reproducible
+        evaluation of distributed algorithms under realistic workloads and failure scenarios.
+  \item Authoring peer-reviewed research papers and actively contributing to academic
+        teaching activities as a teaching assistant in Operating Systems, Systems Programming,
+        and Distributed Algorithms.
+  \item Technologies: Java, Go, Python, C/C++, Linux-based systems, distributed protocols,
+        experimental benchmarking and performance analysis.
+    \end{itemize}
+  }
+
+  \vspace{1em}
+
+\cventry
+  {Senior Software Developer}
+  {2017 -- 2020 \quad | \quad Porto Alegre, Brazil}
+  {Compasso UOL}
+  {%
+    \begin{itemize}
+      \item Technical leadership in the design and development of large-scale full-stack web applications, covering system architecture, scalable backend services and RESTful APIs, modern frontend architectures, CI/CD automation, and performance optimization (TypeScript, Node.js, React).
+    \end{itemize}
+  }
+  \vspace{1em}
+
+\cventry
+  {System Analyst}
+  {2014 -- 2017 \quad | \quad Porto Alegre, Brazil}
+  {Bem Promotora}
+  {%
+    \begin{itemize}
+      \item System analysis and requirements engineering for a large-scale payroll-loan financial platform, translating complex business rules into validated system specifications and backend data logic in collaboration with engineering teams and banking stakeholders (SQL Server, system modeling).
+    \end{itemize}
+  }
+  \vspace{1em}
+
+\cventry
+  {Software Developer}
+  {2008 -- 2013 \quad | \quad Porto Alegre, Brazil}
+  {Vensis / DBServer}
+  {%
+    \begin{itemize}
+      \item Development and maintenance of enterprise ERP systems on the Microsoft stack, including backend business logic design, relational database integration, and performance optimization of SQL Server queries and stored procedures.
+    \end{itemize}
+  }
+
+
+
+% =========================
+% A. Pedagogical Group
+% =========================
+\cvsection{A. Pedagogical Experience}
+
+My pedagogical experience includes undergraduate and graduate teaching as a
+teaching assistant at the \USI, with contributions to courses in Operating
+Systems, Systems Programming, and Distributed Algorithms.
+My teaching emphasizes hands-on learning and experimental evaluation, closely
+connecting theoretical concepts with practical system implementations.
+I have also co-advised undergraduate and graduate students on projects related
+to dependable and distributed systems.
+
+\cvsubsection{A.1 Teaching}
+
+\begin{itemize}[itemsep=1em]
+  \item \textbf{Institution:} \USI \hfill
+        \textbf{Duration:} 2022--2025 \\ [4pt]
+        \textbf{Course:} \href{https://search.usi.ch/en/courses/35265754/distributed-algorithms}{\underline{Distributed Algorithms}} \hfill
+        \textbf{Discipline/Degree level:} Informatics / \textbf{MSc}  \\ [4pt]
+        \textbf{Hours/week:} {\large {1.5}} \hfill
+        \textbf{ECTS:} {6} \quad
+        \textbf{Avg. Students:} 15 \quad
+        \textbf{Role:} Teaching Assistant \\ [4pt]
+        \textbf{Responsible:} \underline{\href{https://www.inf.usi.ch/faculty/pedone/}{Prof. Dr. Fernando Pedone}} \\ [4pt]
+        \textbf{Course description:} The course introduces the foundations of distributed computing, covering system models (synchronous vs. asynchronous systems, communication and failure models), fundamental problems such as consensus, atomic broadcast and multicast, atomic commit, and data consistency, and the application of distributed algorithms to replication techniques. Students learn to design distributed algorithms, reason formally about their correctness, and understand fundamental limitations and impossibility results in distributed systems. The course is taught in person and combines lectures, guided readings, assignments, and a project. Assessment is based on a midterm exam, assignments, a project, and a final exam.
+        
+
+
+        \item \textbf{Institution:} \USI \hfill
+        \textbf{Duration:} 2021--2025 \\ [4pt]
+        \textbf{Course:} \href{https://search.usi.ch/it/corsi/35262262/operating-systems}{\underline{Operating Systems}} \hfill
+        \textbf{Discipline/Degree level:} Informatics / \textbf{BSc}  \\ [4pt]
+        \textbf{Hours/week:} {\large {1.5}} \hfill
+        \textbf{ECTS:} {6} \quad
+        \textbf{Avg. Students:} 55 \quad
+        \textbf{Role:} Teaching Assistant \\ [4pt]
+        \textbf{Responsible:} \underline{\href{https://www.inf.usi.ch/faculty/pedone/}{Prof. Dr. Fernando Pedone}} \\ [4pt]
+        \textbf{Course description:} The course introduces the fundamental principles and design of operating systems, covering system architecture, kernel and user modes, and core mechanisms for process, memory, and storage management. Topics include concurrency, process synchronization, threads, virtual memory, file systems, I/O systems, and operating system protection and security. Through lectures, readings, assignments, and a semester-long project, students gain both theoretical understanding and hands-on experience with key operating system techniques. Assessment is based on a midterm exam, a course project, and a final exam.
+
+
+
+
+        \item \textbf{Institution:} \USI \hfill
+        \textbf{Duration:} 2021 \\ [4pt]
+        \textbf{Course:} \href{https://search.usi.ch/en/courses/35263604/systems-programming}{\underline{Systems Programming}} \hfill
+        \textbf{Discipline/Degree level:} Informatics / \textbf{BSc}  \\ [4pt]
+        \textbf{Hours/week:} {\large {1.5}} \hfill
+        \textbf{ECTS:} {6} \quad
+        \textbf{Avg. Students:} 55 \quad
+        \textbf{Role:} Teaching Assistant \\ [4pt]
+        \textbf{Responsible:} \underline{\href{https://www.inf.usi.ch/carzaniga/}{Prof. Dr. Antonio Carzaniga}} \\ [4pt]
+        \textbf{Course description:} This course provides a practice-oriented introduction to systems programming in C, with limited exposure to C++. It focuses on understanding the C execution model and the language features most relevant to systems development, including memory management, input/output, modularization, and the build process. Through hands-on programming exercises and concrete working examples, students learn to write correct and efficient C programs while gaining insight into how systems integrate components across different abstraction levels. Assessment is based on programming-focused homework assignments and exams.
+
+    \end{itemize}
+
+
+\cvsubsection{A.2 Pedagogical Materials}
+
+\begin{itemize}
+  \item Preparation and continuous update of laboratory theoretical assignments and project
+        statements for undergraduate and graduate courses in Operating Systems,
+        Systems Programming, and Distributed Algorithms.
+  \item Design and implementation of hands-on laboratory materials covering core
+        systems topics, including process management, inter-process communication,
+        concurrency, and performance analysis in Linux environments.
+  \item Development of programming exercises and practical assignments in C, Java,
+        and Python, aimed at strengthening students’ understanding of low-level
+        systems concepts and distributed abstractions.
+  \item Construction and maintenance of experimental infrastructures and supporting
+        materials used by students to conduct performance evaluation and systems
+        experimentation.
+  \item Contribution to assessment activities, including preparation of evaluation
+        scripts, grading criteria, and feedback for programming assignments and
+        projects involving dozens of student submissions per semester.
+  \item Preparation and grading of exams assessing both theoretical understanding and practical
+        implementation skills, ensuring alignment with course learning objectives and
+        providing comprehensive feedback to students.
+\end{itemize}
+
+
+\cvsubsection{A.3 Academic Supervision}
+
+\textbf{MSc Students}
+\begin{itemize}
+    \item \textbf{Position:} Co-advisor (Responsible: \underline{\href{https://www.inf.usi.ch/faculty/pedone/}{Prof. Dr. Fernando Pedone}}) \\ 
+        \textbf{Student:} \emph{E. Steinmacher} (MSc Semester Project, \USI) \\ 
+        \textbf{Title:} Genuine atomic multicast on Apache Kafka \\ 
+        \textbf{Concluded:} 2024. 
+        Resulted in a \href{https://elbatista.github.io/papers/Poster_HiWi_kafka.pdf}{\underline{poster}} presentation at \href{https://pasc24.pasc-conference.org/}{\underline{PASC 2024}} (Zurich, Switzerland). 
+        {[Poster]}
+\end{itemize}
+
+\textbf{BSc Students}
+\begin{itemize}
+  \item \textbf{Position:} Co-advisor (Responsible: \underline{\href{https://www.inf.usi.ch/faculty/pedone/}{Prof. Dr. Fernando Pedone}}) \\ 
+        \textbf{Student:} \emph{M. Cattaneo} (BSc Thesis, \USI) \\
+        \textbf{Title:} Merklized B+Trees for fast state synchronization in blockchain systems \\
+        \textbf{Concluded:} 2022. 
+        \href{https://elbatista.github.io/papers/BSc_project_michele_cattaneo.pdf}{\underline{BSc thesis}}
+\end{itemize}
+
+
+
+\cvsubsection{A.4 Future Teaching Contributions}
+
+I am able to contribute primarily to teaching in
+\textbf{Distributed Systems / Distributed
+Algorithms} and \textbf{Operating Systems}, for which I have extensive teaching and practical
+experience.
+In addition, I am also able to teach other courses aligned with my background, including \textbf{Blockchains}, \textbf{Data Structures},
+\textbf{Concurrency and Parallelism}, \textbf{Programming Languages}, and
+related courses in Computer Systems.
+I am fully prepared to design and deliver both theoretical and practical
+components of these courses.
+
+Based on my experience, I can create high-quality teaching materials, including
+practical laboratory assignments on operating system kernels and concurrency
+mechanisms, project-based modules on consensus and replication protocols (e.g.,
+Paxos and state machine replication), and evaluation instruments combining
+written exams, programming assignments, and system-oriented projects.
+
+My objective is to reinforce the link between teaching and research,
+ensuring that students acquire strong theoretical foundations together with
+practical skills relevant to modern computer systems and distributed computing.
+
+\newpage
+
+% =========================
+% B. Research Group
+% =========================
+\cvsection{B. Research Experience}
+
+% \cvsubsection{Research Scores}
+
+\vspace{1em}
+
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.4\linewidth}
+                        >{\raggedright\arraybackslash}p{0.4\linewidth}
+                        >{\raggedright\arraybackslash}p{0.4\linewidth}@{}}
+
+\textbf{Publications} & \textbf{Under Submission} & \textbf{Impact} \\[6pt]
+
+\begin{minipage}[t]{\linewidth}
+Publications: {\large \textbf{4}} total \\[24pt]
+Journals: {\large \textbf{1}} (Q1) \\[24pt]
+Conferences: {\large \textbf{3}} \\[2pt]
+Core A: \textbf{1} \quad Core B: \textbf{1} \quad No Index: \textbf{1}
+\end{minipage}
+& 
+\begin{minipage}[t]{\linewidth}
+Papers under submission: {\large \textbf{3}} \\[24pt]
+Target venues: \\
+\emph{JPDC} (Q1), \emph{SoCC} (Core B)
+\end{minipage}
+& 
+\begin{minipage}[t]{\linewidth}
+Citations: {\large \textbf{11}} \\[24pt]
+h-index: {\large \textbf{3}}
+\end{minipage}
+\\
+
+\end{tabularx}
+
+\vspace{2em}
+
+
+My research activity focuses on dependable distributed systems, with particular
+emphasis on State Machine Replication, Atomic Multicast, and scalable mechanisms
+for state management and recovery.
+My work combines the design and implementation of distributed protocols with
+experimental evaluation and performance analysis under realistic system
+conditions.
+I have published in peer-reviewed international journals and conferences and
+actively contribute to research projects, infrastructure maintenance, and
+collaborative research activities within an international research environment.
+
+
+\cvsubsection{B.1 Publications}
+
+\textbf{Articles in International Journals}
+\begin{description}[style=unboxed, leftmargin=0pt, itemsep=0.6em]
+  \pubitem{1}{\textbf{E. Batista}, E. Alchieri, F. Dotti and F. Pedone.
+  \textit{Early Scheduling on Steroids: Boosting Parallel State Machine Replication}.
+  \textit{Journal of Parallel and Distributed Computing (JPDC)}, Vol.~163, pp.~269--282, 2022.}
+\end{description}
+
+\textbf{Publications in International Conferences}
+\begin{description}[style=unboxed, leftmargin=0pt, itemsep=0.6em]
+  \pubitem{2}{M. Cattaneo, \textbf{E. Batista} and F. Pedone.
+  \textit{B+AVL trees: towards data structures for robust and efficient blockchain state synchronization}.
+  In \textit{Proceedings of the 44th International Symposium on Reliable Distributed Systems (SRDS)},
+  Porto, Portugal, 2025.}
+
+  \pubitem{3}{\textbf{E. Batista}, P. Coelho, E. Alchieri, F. Dotti and F. Pedone.
+  \textit{FlexCast: Genuine Overlay-based Atomic Multicast}.
+  In \textit{Proceedings of the 24th International Middleware Conference (Middleware)},
+  Bologna, Italy, 2023.}
+
+  \pubitem{4}{\textbf{E. Batista}, E. Alchieri, F. Dotti and F. Pedone.
+  \textit{Resource Utilization Analysis of Early Scheduling in Parallel State Machine Replication}.
+  In \textit{9th Latin-American Symposium on Dependable Computing (LADC)},
+  Natal, Brazil, 2019.}
+\end{description}
+
+\textbf{Articles Under Review / Under Submission}
+\begin{description}[style=unboxed, leftmargin=0pt, itemsep=0.6em]
+  \pubitem{5}{\textbf{E. Batista}, P. Coelho, E. Alchieri, F. Dotti, F. Pedone.
+  \textit{Robust and Efficient Replication with Clustered, Authenticated, and Versioned Data Structures}.
+  Under review at \textit{ACM SoCC 2026}.}
+
+  \pubitem{6}{\textbf{E. Batista}, P. Coelho, E. Alchieri, F. Dotti, F. Pedone.
+  \textit{Reconfiguring Atomic Multicast}.
+  Under submission to \textit{Journal of Parallel and Distributed Computing (JPDC)}.}
+
+  \pubitem{7}{L. Martignetti, \textbf{E. Batista}, G. Cugola, F. Pedone.
+  \textit{Scaling Atomic Ordering in Shared Memory}.
+  Under review at \textit{ACM SoCC 2026}.}
+\end{description}
+
+\textbf{Other Research Products}
+
+\begin{description}[style=unboxed, leftmargin=0pt, itemsep=0.6em]
+
+  \pubitem{8}{E. Steinmacher, D. Pasadakis, \textbf{E. Batista}, O. Schenk, F. Pedone, P. Eugster.
+  \textit{Genuine atomic multicast on Apache Kafka}.
+  Poster presented at the \textit{Platform for Advanced Scientific Computing (PASC 2024)},
+  Zurich, Switzerland.
+  }
+  \pubitem{9}{M. Cattaneo.
+  \textit{Merklized B+Trees for fast state synchronization in blockchain systems}.
+  BSc Thesis, \USI, 2022.
+  (Co-advisor: \textbf{E.~Batista}; Responsible: Prof.~Fernando Pedone).
+  }
+
+  \pubitem{10}{\textbf{E. Batista}.
+  \textit{Revving Up Replication: Communication and State Management for State Machine Replication}.
+  PhD Thesis, \USI~/ PUC-RS, 2026.
+  }
+
+  \pubitem{11}{\textbf{E. Batista}.
+  \textit{Enhancing Early Scheduling in Parallel State Machine Replication}.
+  MSc Thesis, PUC-RS, 2020.
+  }
+
+
+
+
+\end{description}
+
+\cvsubsection{B.2 Projects}
+% Use one entry per project, grouped by your role
+\textbf{Project Submissions (Requested funding)}
+
+\cventry
+  {A Distributed Knowledge Graph Platform for Agentic AI Workloads}
+  {2025}
+  {Role: (Principal Researcher)}
+  {%
+  \textbf{Sponsor:} Hasler Foundation (Switzerland) \hfill
+  \textbf{Status:} Not approved \\ [2pt]
+    \textbf{Program:} \href{https://haslerstiftung.ch/en/what-the-hasler-foundation-supports/open-support/small-projects-requested-amount-up-to-chf-50000/}{\underline{Hasler Stiftung - Small Projects}} \hfill
+    \textbf{Budget:} 50'000.00 CHF \\ 
+    \textbf{Partners:} \USI \hfill \textbf{Duration:} 12 months\\ 
+    \textbf{Project goals:} Design and implement a scalable and fault-tolerant distributed knowledge graph platform for agentic AI workloads, enabling real-time reasoning over large and evolving graph data through incremental queries and dynamic subscriptions.
+  }
+
+
+
+\cventry
+  {KAIROS: Knowledge Architecture for Incremental Reasoning Over Data Sources}
+  {2025}
+  {Role: (Principal Researcher)}
+  {%
+  \textbf{Sponsor:} Innosuisse / SNSF (Switzerland) \hfill
+  \textbf{Status:} Not approved \\ [2pt]
+    \textbf{Program:} \href{https://www.bridge.ch/en/OUlwVr73Qg55dJtK/page/funding/proof-of-concept}{\underline{Bridge - PoC}} \hfill
+    \textbf{Budget:} 125'000.00 CHF \\ 
+    \textbf{Partners:} \href{https://www.swisscom.ch/en/about/company.html}{\underline{Swisscom}}, \USI \hfill \textbf{Duration:} 12 months\\ 
+    \textbf{Project goals:} Develop KAIROS, a distributed, cloud-neutral platform that enables real-time, incremental reasoning over evolving knowledge graphs for agentic AI systems. The project aims to overcome scalability, availability, and consistency limitations of existing graph-based RAG solutions by supporting incremental query processing, reuse of intermediate states, and strongly consistent, fault-tolerant graph storage. KAIROS will be validated through a TRL-6 prototype, systematic benchmarking under dynamic workloads, and an initial enterprise deployment, with the long-term goal of enabling reliable, real-time AI reasoning over enterprise knowledge and supporting high-impact industrial applications.
+  }
+
+
+\cventry
+  {KAIROS: Knowledge Architecture for Incremental Reasoning Over Data Sources}
+  {2026}
+  {Role: (Principal Researcher)}
+  {%
+  \textbf{Sponsor:} \href{https://www.fondationalcea.org/}{\underline{Alcea Foundation}} (Switzerland) \hfill
+  \textbf{Status:} Under evaluation \\ [2pt]
+    \textbf{Program:} The Innovators \hfill
+    \textbf{Budget:} 200'000.00 CHF \\ 
+    \textbf{Partners:} \href{https://www.swisscom.ch/en/about/company.html}{\underline{Swisscom}}, \USI \hfill \textbf{Duration:} 12 months\\ 
+    \textbf{Project goals:} Same as previous.
+  }
+
+
+
+
+\vspace{1em}
+
+
+\textbf{Participation as an Integrated Researcher}
+
+\cventry
+  {DDC — Dependable Distributed Computing}
+  {2019--Present}
+  {Role: Integrated researcher / Research group member}
+  {\\
+    \textbf{Project goals:}
+    Research on dependable distributed systems, with emphasis on fault tolerance,
+    replication protocols, and performance-oriented system architectures.\\ [3pt]
+    \textbf{My contributions:}
+    \begin{itemize}
+      \item Active participation in research activities related to Parallel State
+            Machine Replication within the Dependable Distributed Computing research line.
+      \item Contribution to the design, implementation, and experimental evaluation
+            of distributed protocols and system architectures.
+      \item Collaboration with senior researchers and advisors in research discussions,
+            paper development, and systems experimentation.
+    \end{itemize}
+    \textbf{Institution:} \PUCRS~(PUC-RS)\\ [3pt]
+    \textbf{Research group:} \href{http://dgp.cnpq.br/dgp/espelhogrupo/2601332566402187}{\underline{Dependable Distributed Computing}}\\ [3pt]
+    \textbf{Research line:} Parallel State Machine Replication\\ [3pt]
+    \textbf{Supervisor:} \underline{\href{https://fldotti.github.io/}
+    {Prof. Dr. Fernando Dotti}}\\ [3pt]
+    \textbf{Funding agency:} CNPq - Brazilian National Council for Scientific and Technological Development
+  }
+
+
+\cvsubsection{B.3 Autonomy and Leadership}
+
+\begin{itemize}
+  \item \textbf{Research and academic leadership:}
+        Active participation in research group activities, including interviewing and
+        assessing prospective PhD candidates for the Distributed Systems Group under
+        the supervision of Prof.~Fernando Pedone, contributing to candidate evaluation
+        and selection processes.
+        
+  \item \textbf{Infrastructure and systems leadership:}
+        System administrator of the DSLab cluster, comprising approximately 90 machines running Linux,
+        and supporting multiple users and research activities, including system
+        maintenance, user support, and reliability of experimental infrastructures.
+        
+  \item \textbf{Teaching-related responsibilities:}
+        Regular involvement in student support activities as a teaching assistant,
+        including holding office hours, mentoring students, and providing guidance on
+        coursework and project-related challenges.
+        
+  \item \textbf{Industry leadership experience:}
+        Team leader of software development teams in industrial settings, coordinating
+        development activities, contributing to architectural decisions, and supporting
+        junior developers in full-stack and backend-oriented projects.
+\end{itemize}
+
+
+
+
+
+
+
+\cvsection{C. Other Activities}
+
+
+% \textbf{Committees / Reviewing / Service}
+\cvsubsection{C.1 Committees / Reviewing / Service}
+
+\begin{itemize}
+  \item \textbf{Academic evaluation service:}
+        Participation in the evaluation of BSc poster presentations and undergraduate
+        project work as part of course-level assessment activities at USI.
+
+        
+  \item \textbf{Peer reviewing (international conferences and journals):}
+        Reviewer for leading venues in distributed systems and dependability, including
+        DSN (2022, 2023, 2025, 2026), EuroSys (2022, 2024), Middleware (2022),
+        OPODIS (2023--2025), SRDS (2024), ICDCS (2024), IEEE TDSC (2022),
+        and USENIX ATC (2022, 2025).
+\end{itemize}
+
+\cvsubsection{C.2 Talks}
+
+\begin{itemize}
+  \item \textbf{Research talk:}
+        Presentation at the SYS Institute Yearly Workshop,
+        \USI, Lugano, Switzerland, 2021.
+        
+  \item \textbf{Workshop talk:}
+        \textit{Um Olhar Atual sobre Sistemas Distribuídos: Da Pesquisa à Aplicação no Mundo Real}.
+        Switzerland--Brazil Workshop, PUC-RS + Online,
+        Porto Alegre, Brazil, April 2025.
+\end{itemize}
+
+\cvsubsection{C.3 Programming Languages and Tools}
+
+\textbf{Programming Languages}
+\begin{itemize}
+  \item \textbf{Main:} Java, Go, Python, Node.js / TypeScript
+  \item \textbf{Experienced:} C, C++, SQL
+  \item \textbf{Used in the past:} C\#, JavaScript, Bash, Visual Basic, Assembly, PHP
+\end{itemize}
+
+\textbf{Tools / Frameworks / Platforms}
+\begin{itemize}
+  \item \textbf{Cluster / Cloud management:}
+        Linux-based cluster administration, job scheduling, experiment orchestration
+  \item \textbf{Virtualization / Containers:}
+        Docker, VirtualBox, Vagrant
+  \item \textbf{Operating systems:}
+        Linux (advanced), Windows, MacOS
+  \item \textbf{Collaboration tools:}
+        Git, GitHub, GitLab, JIRA, Confluence
+  \item \textbf{Frameworks / Libraries / Algorithms:}
+        MPI, BFT-SMaRt, Redis, ProtocolBuffers, Netty, Eclipse, Maven, Gradle, vim, nano
+  \item \textbf{Web / Application frameworks:}
+        React, Next.js, Express.js, HTML/CSS, REST APIs, server-side rendering, full-stack development
+  \item \textbf{Databases:}
+        SQL Server, relational databases, NoSQL databases, data modelling, query optimization, stored procedures, database administration, graph databases
+  \item \textbf{Office / Writing:}
+        \LaTeX, Markdown, Microsoft Office, Gnuplot, data visualization tools
+        \item \textbf{Design and Photography:} Photoshop, GIMP, Flash, Inkscape, Lightroom, Adobe Premiere, DaVinci Resolve
+\end{itemize}
+
+\end{document}
